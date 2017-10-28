@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="06W-NG-LCL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="FPF-4f-zWW">
+            <objects>
+                <navigationController id="06W-NG-LCL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rLN-zP-LgX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gRS-nz-bfx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MyH-qj-6fC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-732" y="112"/>
+        </scene>
+        <!--Mapbox-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Mapbox" id="BYZ-38-t0r" customClass="ViewController" customModule="MapBoxPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mapbox" id="yEc-Bf-vt6">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="dwE-tn-6fE">
+                            <connections>
+                                <segue destination="Fd7-ec-rOe" kind="show" identifier="showFilter" id="LzF-Mz-3ud"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="lUF-VJ-Ha7">
+            <objects>
+                <viewController id="Fd7-ec-rOe" customClass="FilterViewController" customModule="MapBoxPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ef5-oG-NNT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eR2-tN-K5B">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fd7-ec-rOe" id="C4l-sX-PaL"/>
+                                    <outlet property="delegate" destination="Fd7-ec-rOe" id="guK-SH-t75"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eR2-tN-K5B" firstAttribute="bottom" secondItem="ILs-zj-Yid" secondAttribute="bottom" id="CPJ-AI-Sna"/>
+                            <constraint firstItem="eR2-tN-K5B" firstAttribute="top" secondItem="ILs-zj-Yid" secondAttribute="top" id="U7t-7Q-mho"/>
+                            <constraint firstItem="eR2-tN-K5B" firstAttribute="leading" secondItem="ILs-zj-Yid" secondAttribute="leading" id="kU0-ZL-2zP"/>
+                            <constraint firstItem="eR2-tN-K5B" firstAttribute="trailing" secondItem="ILs-zj-Yid" secondAttribute="trailing" id="mJ2-qG-O4j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ILs-zj-Yid"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="eR2-tN-K5B" id="fVJ-wx-HXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUT-RA-pWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="38"/>
+        </scene>
+    </scenes>
+</document>
